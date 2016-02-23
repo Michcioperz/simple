@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css">
+    <style>
+      body { background-image: url('https://unsplash.it/2291/3450?image=537'); background-position: center; background-size: cover; }
+      @media (min-width: 768px) { body { background-image: url('https://unsplash.it/5616/3744?image=903'); } }
+      .wrapper { min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+      form { min-width: 80vw; flex: 0 0 auto; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="{{ url_for("vid_open") }}" class="text-center row" method="GET">
+        <div class="form-group col-xs-12 col-sm-8 col-md-9 col-lg-10">
+          <input name="video_path" class="form-control input-lg" type="url" autocomplete="off" autofocus="autofocus" required="required" placeholder="Paste video URL here..." type="url">
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+          <button type="submit" class="btn btn-lg btn-default" alt="Tenpenchii!" title="Tenpenchii!">天変地異</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
