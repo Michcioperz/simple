@@ -9,11 +9,12 @@
       body { background-image: url('https://unsplash.it/2291/3450?image=537'); background-position: center; background-size: cover; }
       @media (min-width: 768px) { body { background-image: url('https://unsplash.it/5616/3744?image=903'); } }
       .wrapper { min-height: 100vh; display: flex; justify-content: center; align-items: center; }
-      form { min-width: 80vw; flex: 0 0 auto; }
+      .rewrapper { min-width: 80vw; flex: 0 0 auto; }
     </style>
   </head>
   <body>
     <div class="wrapper">
+      <div class="rewrapper">
       <form action="{{ url_for("vid_open") }}" class="text-center row" method="GET">
         <div class="form-group col-xs-12 col-sm-8 col-md-9 col-lg-10">
           <input name="video_path" class="form-control input-lg" type="url" autocomplete="off" autofocus="autofocus" required="required" placeholder="Paste video URL here..." type="url">
@@ -22,6 +23,27 @@
           <button type="submit" class="btn btn-lg btn-default" alt="Tenpenchii!" title="Tenpenchii!">天変地異</button>
         </div>
       </form>
+      <form action="{{ url_for("vid_control") }}" class="text-center col-xs-12 row" method="GET">
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value="q"><span class="glyphicon glyphicon-eject"></span></button>
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value="up"><span class="glyphicon glyphicon-fast-forward"></span>(+10m)</button>
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value=" "><span class="glyphicon glyphicon-play"></span><span class="glyphicon glyphicon-pause"></span></button>
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value="left"><span class="glyphicon glyphicon-step-backward"></span>(-30s)</button>
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value="down"><span class="glyphicon glyphicon-fast-backward"></span>(-10m)</button>
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-lg btn-default" name="key" value="right"><span class="glyphicon glyphicon-step-forward"></span>(+30s)</button>
+            </div>
+      </form>
+      </div>
     </div>
   </body>
 </html>
